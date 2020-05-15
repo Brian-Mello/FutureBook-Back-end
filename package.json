@@ -1,0 +1,46 @@
+{
+  "name": "aula-back-arquitetura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "ts-node-dev -r dotenv/config ./src/presentation/local/index.ts",
+    "start": "tsc && node -r dotenv/config ./build/presentation/local/index.js",
+    "test": "node ./node_modules/jest/bin/jest.js",
+    "ziplambda": "bestzip ../lambda.zip ./*",
+    "build": "rm -rf build && tsc",
+    "postbuild": "cp ./package.json build && cd build && npm i && npm run ziplambda"
+  },
+  "author": "Brian, Valquíria, Lorenzo",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.3",
+    "@types/jsonwebtoken": "^8.3.8",
+    "@types/nodemailer": "^6.4.0",
+    "@types/md5": "^2.1.33",
+    "@types/randomstring": "^1.1.6",
+    "@types/knex": "^0.16.1",
+    "@types/node": "^13.7.7",
+    "@types/uuid": "^7.0.0",
+    "jest": "^24.9.0",
+    "md5": "^2.2.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "randomstring": "^1.1.5",
+    "reverse-md5": "^0.0.4",
+    "nodemailer": "^6.4.2",
+    "knex": "^0.20.11",
+    "mysql": "^2.18.1",
+    "ts-node": "^8.6.2",
+    "ts-jest": "^24.2.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3",
+    "url-pattern": "^1.0.3",
+    "uuid": "^7.0.2"
+  },
+  "devDependencies": {
+    "bestzip": "^2.1.5"
+  }
+}
